@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 require('dotenv').config()
 
-const validate = (req, res, next) => {
+const validateToken = (req, res, next) => {
     // if token not found
   const accessToken = req.header("token");
 
@@ -25,4 +25,4 @@ const validate = (req, res, next) => {
 };
 
 
-module.exports = { validate };
+module.exports = { validateToken };

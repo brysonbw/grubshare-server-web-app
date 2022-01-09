@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require('cors')
+const helmet = require('helmet')
 require('dotenv').config()
 
 // app
@@ -9,8 +10,8 @@ const app = express()
 // middleware 
 // set limit MB for (client) user image file data
 app.use(express.json({limit: '30mb'}))
-// cors config
 app.use(cors())
+app.use(helmet())
 
 // routers
 
