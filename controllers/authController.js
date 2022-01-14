@@ -34,9 +34,8 @@ module.exports.signupHandler = async (req, res) => {
         if (error instanceof Prisma.PrismaClientKnownRequestError) {
             // send error -> if email already exist
             if (error.code === 'P2002') {
-                // giving vague response to not hint 'invalid email' -> attack protection
               return res.status(400).send(
-                'Sorry, an error occurred - please try again.'
+                'Sorry, an error occurred - This email is already associated with an account.'
               )
             }
           } else {
